@@ -1,17 +1,127 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <title>Python Flashcards</title>
+<meta charset="utf-8">
+<title>Flashcards - Python Pro</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.container{
+    width:700px;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    margin-bottom:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+h3{
+    color:#555;
+}
+
+#question{
+    font-size:20px;
+    margin-top:10px;
+}
+
+#answer{
+    margin-top:15px;
+    display:none;
+    background:#f0f4ff;
+    padding:12px;
+    border-radius:6px;
+    border-left:5px solid #667eea;
+}
+
+.buttons{
+    margin-top:20px;
+}
+
+button{
+    padding:10px 16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+    margin-right:8px;
+    transition:0.2s;
+}
+
+#show{
+    background:#667eea;
+    color:white;
+}
+
+#show:hover{
+    background:#5563d6;
+}
+
+#next{
+    background:#48bb78;
+    color:white;
+}
+
+#next:hover{
+    background:#38a169;
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>Flashcard</h1>
+<div class="container">
 
-<p><strong>Pergunta:</strong> {{ card.question }}</p>
+<h1>📚 Flashcard</h1>
 
-<p><strong>Resposta:</strong> {{ card.answer }}</p>
+<div class="card">
 
-<a href="/">Próximo</a>
+<h3>Pergunta:</h3>
+<p id="question">{{ card.q }}</p>
+
+<div id="answer">
+<strong>Resposta:</strong> <span id="ans-text">{{ card.a }}</span>
+</div>
+
+<div class="buttons">
+<button id="show">Mostrar resposta</button>
+<button id="next">Próxima carta</button>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("show").onclick = function(){
+    document.getElementById("answer").style.display = "block";
+}
+
+document.getElementById("next").onclick = function(){
+    window.location.href="/";
+}
+
+</script>
 
 </body>
 </html>
