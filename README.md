@@ -2,6 +2,9 @@
 
 Pequena aplicação web desenvolvida com Flask que apresenta flashcards de conceitos básicos de programação.
 
+<img width="1366" height="473" alt="image" src="https://github.com/user-attachments/assets/216da140-57e0-418a-a717-1efe5f989f90" />
+
+
 ## Tecnologias utilizadas
 
 - Python
